@@ -1,4 +1,8 @@
-# Functions for reading and writing bytes on a hard drive.
+"""
+File: io_helper.py
+Purpose: Holds functions to take care of annoying lower level tasks
+Author(s): Joncarlo Alvarado, Thomas Daniels
+"""
 
 import os
 
