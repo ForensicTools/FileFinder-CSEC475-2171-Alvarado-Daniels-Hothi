@@ -1,3 +1,4 @@
+
 """
 File: io_helper.py
 Purpose: Holds functions to take care of annoying lower level tasks
@@ -24,6 +25,7 @@ def read_image(offset, size=512):
     image.seek(offset)
 
     return image.read(size)
+
 	
 def convertToHex(hexString):
 	"""
@@ -41,3 +43,4 @@ def convertToHex(hexString):
 		result = hexChar + result
 	
 	return result
+
