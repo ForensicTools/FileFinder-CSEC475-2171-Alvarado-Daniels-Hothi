@@ -1,7 +1,7 @@
 """
 File: io_helper.py
 Purpose: Holds functions to take care of annoying lower level tasks
-Author(s): Joncarlo Alvarado, Thomas Daniels
+Author(s): Joncarlo Alvarado, Thomas Daniels 
 """
 
 import os
