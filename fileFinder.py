@@ -27,6 +27,8 @@ def getMFTStartIndex():
     Purpose: Gets the offset of the MFT in bytes
     @return  (int) Offset of the MFT in bytes
     """
+    global SECTOR_SIZE, CLUSTER_SIZE, SECTOR_OFFSET, CLUSTER_OFFSET, MTF_OFFSET
+    
     bootSector = read_image(0, SECTOR_SIZE) # Read 1st disk sector
 
     # Redefine SECTOR_SIZE or CLUSTER_SIZE if they're different than expected
@@ -38,8 +40,9 @@ def getMFTStartIndex():
     return SECTOR_SIZE*CLUSTER_SIZE*int(convertToHex(bootSector[MTF_OFFSET:MTF_OFFSET+8]), 16)
 
 def main():
-    # Get offset in number of bytes
-    MTFStartIndex = getMFTStartIndex()
+    # Get offset of MFT in number of bytes
+    MTFIndex = getMFTStartIndex()
+
 
 if(__name__ == '__main__'):
     if(not ctypes.windll.shell32.IsUserAnAdmin()):
