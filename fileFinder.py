@@ -95,7 +95,7 @@ def findMFTRecord(MFTIndex, filename):
             break
         else:
             # Take a look at the next entry
-            MFTIndex += 1024
+            MFTIndex += MFT_ENTRY_SIZE
         testcounter += 1
 
     return fileIndex
