@@ -27,12 +27,12 @@ def read_image(offset, size=512):
     return image.read(size)
 
 	
-def convertToHex(hexString):
+def hexToInt(hexString):
     """
-    Purpose:  Converts little endian bytes to big endian hex characters
+    Purpose:  Converts little endian bytes to an integer
     @param   (str) hexString - bytes presented by Python as '\x3f\x00' and
               so on in little endian
-    @return  (str) a big endian version of hexString in hex characters
+    @return  (int) a big endian version of hexString in hex characters
     """
 
     result = ''
@@ -40,6 +40,6 @@ def convertToHex(hexString):
         hexChar = "{0:x}".format(ord(byte))
         if(len(hexChar) == 1):
             hexChar = '0' + hexChar
-	result = hexChar + result
+        result = hexChar + result
 
-    return result
+    return int(result, 16)
