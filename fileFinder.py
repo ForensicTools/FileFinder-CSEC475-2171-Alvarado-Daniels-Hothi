@@ -48,9 +48,7 @@ def getMFTStartIndex():
     # offset in terms of clusters, so convert clusters to bytes
     return SECTOR_SIZE*CLUSTER_SIZE*hexToInt(bootSector[MFT_OFFSET:MFT_OFFSET+8])
 
-
-## TODO: Optimize Function
-## TODO: Add way to determine MFT Size, Add threading
+## TODO: Add way to determine MFT Size
 
 def findMFTRecord(MFTIndex, filename):
     """
